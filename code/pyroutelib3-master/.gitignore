@@ -1,7 +1,0 @@
-test*
-tilescache*
-__pycache__*
-build*
-dist*
-*.egg-info
-*.osm
