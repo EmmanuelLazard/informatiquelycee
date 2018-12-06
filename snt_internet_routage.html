@@ -118,6 +118,11 @@
 						<h4>À faire vous-même 4</h4>
 						<p>Un réseau de classe C peut contenir au maximum combien de machines ? et un réseau de classe B ? (rappel : b, c et d sont compris entre 0 et 255).</p>
 						<hr>
+						<p>
+							Chose très importante à toujours avoir à l'esprit, même une simple photo n'est pas "transportée" en une fois d'un ordinateur A vers un ordinateur B. Les données correspondantes à la photo sont "découpées" en plusieurs morceaux, chaque morceau étant transporté par l'intermédiaire d'un paquet IP.
+							Les paquets IP transportant les "morceaux de photo" n'empruntent pas tous le même "chemin" pour aller de l'ordinateur A vers l'ordinateur B. Par exemple, pour aller de l'ordinateur M14 à M7, certains paquets passeront par les routeurs G, F, H et C alors que d'autres paquets emprunteront le chemin G, F, E, D et C.
+							Une fois que tous les paquets sont arrivés à destination, l'image originale peut être reconstituée. Si un paquet se "perd" en route, au bout d'un moment, il peut être renvoyé par la machine émettrice (voir le protocole TCP), pourquoi pas en empruntant un autre "chemin".
+						</p>
 		<p>Téléchargement de cette page pour une utilisation sans ordinateur :</p>
 		<a href="pdf/snt_internet_routage.pdf" target="_blank"><img src="img/tel_pdf.png"/></a>
 		<a href="pdf/snt_internet_routage.odt" target="_blank"><img src="img/odt.jpg"/></a>
