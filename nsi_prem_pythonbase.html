@@ -110,7 +110,7 @@ i = 12
 			<p>À l'aide d'IDLE, testez le code suivant :</p>
 			<pre><code class='python'>
 point_de_vie = 15
-print(point_de_vie)
+point_de_vie
 			</code></pre>
 			<hr>
 			<p>
@@ -205,7 +205,7 @@ import math
 				<li>math.cos(x) permet de calculer le cosinus de l'angle x (l'angle x doit être en radian) (nous avons la même chose pour le sinus ou la tangente)</li>
 				<li>math.sqrt(x) permet de calculer la racine carrée de x</li>
 			</ul>
-			<p>Si vous avez besoin d'autres fonctions mathématiques, je vous invite à consulter la documentation de Python : <a href="https://docs.python.org/2/library/math.html" target="_blank">https://docs.python.org/2/library/math.html</a>
+			<p>Si vous avez besoin d'autres fonctions mathématiques, je vous invite à consulter la documentation de Python : <a href="https://docs.python.org/3/library/math.html" target="_blank">https://docs.python.org/3/library/math.html</a>
 			<h4>À faire vous-même 7</h4>
 			<p>Qu'est-ce que le programme suivant va permettre d'afficher à l'écran ? Validez votre réponse à l'aide d'IDLE.</p>
 			<pre><code class='python'>
@@ -360,7 +360,7 @@ def nom_de_la_fonction(parametre):
 	return y
 suite programme
 			</code></pre>
-			<p>La fonction retournera la valeur contenue dans la variable y.</p>
+			<p>La fonction renvoie la valeur contenue dans la variable y.</p>
 			<p>
 				ATTENTION : Notez bien la présence du décalage entre la première ligne et les lignes suivantes. Ce décalage est appelé indentation, l'indentation permet de définir un bloc de code.
 				Dans l'exemple ci-dessus, l'indentation nous permet de savoir que "instruction_1", "instruction_2" et "return y" constituent un bloc de code, ce bloc correspond au contenu de la fonction.
@@ -387,7 +387,7 @@ print (f"La fonction renvoie {solution}")
 			</code></pre>
 			<p>
 				Il faut savoir qu'au moment de l'exécution de votre programme le code "ma_fonction(4)" sera systématiquement
-				remplacé par la valeur retournée par la fonction (toujours dans notre exemple le "ma_fonction(4)" sera remplacé par le nombre 14).
+				remplacé par la valeur renvoyée par la fonction (toujours dans notre exemple le "ma_fonction(4)" sera remplacé par le nombre 14).
 			</p>
 			<hr>
 			<h4>À faire vous-même 14</h4>
@@ -428,7 +428,7 @@ c = ma_fon()
 print(c)
 			</code></pre>
 			<hr>
-			<p>Il faut aussi savoir qu'une fonction ne retourne pas forcément de valeur (le mot clé return n'est pas obligatoire). Mais si elle ne retourne pas de valeur, que fait-elle ? Elle peut faire plein de choses, par exemple elle peut tout simplement afficher un texte. Sachez que dans certains langages, on utilise les termes méthode ou procédure pour qualifier une fonction "qui ne retourne rien".</p>
+			<p>Il faut aussi savoir qu'une fonction ne renvoie pas forcément de valeur (le mot clé return n'est pas obligatoire). Mais si elle ne renvoie pas de valeur, que fait-elle ? Elle peut faire plein de choses, par exemple elle peut tout simplement afficher un texte. Sachez que dans certains langages, on utilise les termes méthode ou procédure pour qualifier une fonction "qui ne renvoie rien".</p>
 			<h4>À faire vous-même 18</h4>
 			<p>Soit le programme suivant :</p>
 			<pre><code class='python'>
@@ -545,7 +545,7 @@ print("En revanche, j'aime le Python.")
 			<hr>
 			<h4>À faire vous-même 24</h4>
 			<p>
-				Écrire une fonction qui prend en paramètre un age. Si age est supérieur ou égal à 18 ans, la fonction devra retourner la chaîne de caractères "Bonjour, vous êtes majeur.". Si age est inférieur à 18 ans, la fonction devra retourner "Bonjour, tu es mineur."
+				Écrire une fonction qui prend en paramètre un age. Si age est supérieur ou égal à 18 ans, la fonction devra renvoyer la chaîne de caractères "Bonjour, vous êtes majeur.". Si age est inférieur à 18 ans, la fonction devra renvoyer "Bonjour, tu es mineur."
 			</p>
 			<hr>
 			<h4>À faire vous-même 25</h4>
@@ -553,17 +553,20 @@ print("En revanche, j'aime le Python.")
 			<pre><code class='python'>
 def annonce(num, prov, dest):
 	if dest != "0":
-		print(f"le train n° {num} en provenance de {prov} et à destination de {dest}, entre en gare.")
+		msg = f"le train n° {num} en provenance de {prov} et à destination de {dest}, entre en gare."
 	else:
-		print(f"le train n° {num} en provenance de {prov} entre en gare. Ce train est terminus Triffouillis-les-Oies.")
-annonce("4557", "Paris", "Marseille")
-annonce("5768", "Bonneville", "0")
+		msg = f"le train n° {num} en provenance de {prov} entre en gare. Ce train est terminus Triffouillis-les-Oies."
+	return msg
+m_1 = annonce("4557", "Paris", "Marseille")
+m_2 = annonce("5768", "Bonneville", "0")
+print(m_1)
+print(m_2)
 			</code></pre>
 			<p>Quel est le résultat attendu après l'exécution de ce programme ? Vérifiez votre réponse en testant ce programme.</p>
 			<hr>
 			<h4>À faire vous-même 26</h4>
 			<p>Vous êtes gérant d'un magasin et vous désirez écrire un programme Python qui calculera automatiquement le montant de la facture des clients. Tout client qui achète au moins 5 fois le même article se voit octroyer une remise de 5 % (uniquement sur le montant de l'achat de cet article). Afin de simplifier le problème, on considère qu'un client n'achète qu'un seul type d'article.
-				Écrire une fonction qui prend en paramètre le prix unitaire de l'article et le nombre d'articles achetés. Cette fonction doit retourner le montant de la facture.</p>
+				Écrire une fonction qui prend en paramètre le prix unitaire de l'article et le nombre d'articles achetés. Cette fonction doit renvoyer le montant de la facture.</p>
 			<hr>
 			<h3>Le "ou" et le "et"</h3>
 			<p>Un if peut contenir plusieurs conditions, nous aurons alors une structure de la forme :</p>
