@@ -41,7 +41,7 @@
 								<li>6 switchs : R1 à R6</li>
 								<li>8 routeurs : A, B, C, D, E, F, G et H</li>
 						</ul>
-			<p>Un switch est une sorte de « multiprise intelligente » qui permet de relier entre eux tous les ordinateurs appartenant à un même réseau (nous verrons des exemples un peu plus bas). Pour ce faire, un switch est composé d’un nombre plus ou moins important de prises RJ45 femelles
+			<p>Un switch est une sorte de « multiprise intelligente » qui permet de relier entre eux tous les ordinateurs appartenant à un même réseau, que nous appelerons "local" (nous verrons des exemples un peu plus bas). Pour ce faire, un switch est composé d’un nombre plus ou moins important de prises RJ45 femelles
 				(un câble  ethernet (souvent appelé « câble réseau ») possède 2 prises RJ45 mâles à ses 2 extrémités).</p>
 						<div class="centrer">
 							<img src="img/switch.png" alt="reseau"/>
@@ -51,24 +51,24 @@
 				Les routeurs les plus simples que l’on puisse rencontrer permettent de relier ensemble deux réseaux (il possède alors 2 interfaces réseau),
 				mais il existe des routeurs capables de relier ensemble une dizaine de réseaux.</p>
 						<p>Revenons maintenant à l’analyse de notre schéma :</p>
-						<p>Nous avons 6 réseaux, chaque réseau possède son propre switch (dans la réalité, un réseau est souvent composé de plusieurs switchs
+						<p>Nous avons 6 réseaux locaux, chaque réseau local possède son propre switch (dans la réalité, un réseau local est souvent composé de plusieurs switchs
 							si le nombre d’ordinateurs appartenant à ce réseau devient important).</p>
-			<p>Les ordinateurs M1, M2 et M3 appartiennent au réseau 1. Les ordinateurs M4, M5 et M6 appartiennent au réseau 2. Nous pouvons synthétiser tout cela comme suit :</p>
+			<p>Les ordinateurs M1, M2 et M3 appartiennent au réseau local 1. Les ordinateurs M4, M5 et M6 appartiennent au réseau local 2. Nous pouvons synthétiser tout cela comme suit :</p>
 						<ul>
-								<li>réseau 1 : M1, M2 et M3</li>
-								<li>réseau 2 : M4, M5 et M6</li>
+								<li>réseau local 1 : M1, M2 et M3</li>
+								<li>réseau local 2 : M4, M5 et M6</li>
 						</ul>
 						<h4>À faire vous-même 1</h4>
-			<p>Complétez la liste ci-dessus avec les réseaux 3, 4, 5 et 6</p>
+			<p>Complétez la liste ci-dessus avec les réseaux locaux 3, 4, 5 et 6</p>
 						<hr>
 			<p>Voici quelques exemples de communications  entre 2 ordinateurs :</p>
 						<h4>cas n°1 : M1 veut communiquer avec M3</h4>
-			<p>Le paquet est envoyé de M1 vers le switch R1, R1 « constate » que M3 se trouve bien dans le réseau 1, le paquet est donc envoyé vers M3. On peut résumé le trajet du paquet par :</p>
+			<p>Le paquet est envoyé de M1 vers le switch R1, R1 « constate » que M3 se trouve bien dans le réseau local 1, le paquet est donc envoyé directement vers M3. On peut résumé le trajet du paquet par :</p>
 			<p>M1→R1→M3</p>
 						 <h4>cas n°2 : M1 veut communiquer avec M6</h4>
-			<p>Le paquet est envoyé de M1 vers le switch R1, R1 « constate » que M6 n’est pas sur le réseau 1, R1 envoie donc le paquet vers le routeur A. Le routeur A n'est pas connecté directement au réseau R2 (réseau de la machine M6),
-				mais il "sait" que le routeur B est connecté au réseau R2.
-				Le routeur A envoie le paquet vers le routeur B. Le routeur B est connecté au réseau 2, il envoie le paquet au Switch R2. Le Switch R2 envoie le paquet à la machine M6.<p>
+			<p>Le paquet est envoyé de M1 vers le switch R1, R1 « constate » que M6 n’est pas sur le réseau local 1, R1 envoie donc le paquet vers le routeur A. Le routeur A n'est pas connecté directement au réseau local 2 (réseau de la machine M6),
+				mais il "sait" que le routeur B est connecté au réseau local 2.
+				Le routeur A envoie le paquet vers le routeur B. Le routeur B est connecté au réseau local 2, il envoie le paquet au Switch R2. Le Switch R2 envoie le paquet à la machine M6.<p>
 			<p> M1 → R1→ Routeur A → Routeur B → R2 → M6</p>
 			<h4>cas n°3 : M1 veut communiquer avec M9</h4>
 			<p>M1 → R1 → Routeur A → Routeur B → Routeur D → Routeur E → R4 → M9</p>
@@ -85,8 +85,8 @@
 			<p>
 				On pourrait penser que le chemin "Routeur F → Routeur E" est plus rapide et donc préférable au chemin "Routeur F → Routeur H", cela est sans doute vrai, mais imaginez qu’il y ait un problème technique entre le Routeur F et le Routeur E,
 					l’existence du chemin "Routeur F → Routeur H" permettra tout de même d’établir une communication entre M13 et M9.
-					Parfois, on entend certains politiques ou journalistes évoquer «la coupure d’internet »,
-					peut être comprendrez vous mieux maintenant que cela n’a aucun sens, car même si une autorité quelconque décidait de couper une partie des infrastructures,
+					Parfois, on entend certains politiques ou journalistes évoquer « la coupure d’internet »,
+					peut être comprendrez-vous mieux maintenant que cela n’a aucun sens, car même si une autorité quelconque décidait de couper une partie des infrastructures,
 					les paquets pourraient passer par un autre chemin.
 			</p>
 						<h4>À faire vous-même 2</h4>
@@ -102,21 +102,22 @@
 						<h4>À faire vous-même 3</h4>
 						<p>En partant des exemples ci-dessus, donnez une adresse IP possible pour les ordinateurs suivants : M1, M6 et M8.</p>
 						<hr>
-						<p>Attention, les adresses IP (a.b.c.d) n’ont forcément pas les parties a, b et c consacrées à l’identification du réseau et la partie d consacrées à l’identification des machines sur le réseau :</p>
+						<p>Attention, les adresses IP (a.b.c.d) n’ont forcément pas les parties a, b et c consacrées à l’identification du réseau et la partie d consacrées à l’identification des machines sur le réseau. Dans les premières années d'Internet, les adresses ont été découpées en trois classes :</p>
 						<ul>
 								<li>Certaines adresses ont les parties a, b et c consacrées à l’identification du réseau et la partie d consacrée à l’identification des machines sur le réseau (on parle d'adresse IP de classe C)</li>
 								<li>Certaines adresses ont la partie a et b consacrées à l’identification du réseau et les parties c et d consacrées à l’identification des machines sur le réseau (on parle d'adresse IP de classe B)</li>
 								<li>Certaines adresses ont la partie a consacrée à l’identification du réseau et les parties b, c et d consacrées à l’identification des machines sur le réseau (on parle d'adresse IP de classe A)</li>
 						</ul>
-						<p>Tout cela dépend de ce que l’on appelle le «masque de sous-réseau », mais cette notion ne sera pas abordée ici.</p>
 						<p>Nous avons donc :</p>
 						<ul>
 								<li>Réseau de classe A : adresse réseau : a.0.0.0 (avec a qui doit être compris entre 1 et 126)</li>
 								<li>Réseau de classe B : adresse réseau : a.b.0.0 (avec a qui doit être compris entre 128 et 191)</li>
 								<li>Réseau de classe C : adresse réseau : a.b.c.0 (avec a qui doit être compris entre 192 et 223)</li>
 						</ul>
+						<p>Cette partition étant peu flexible, elle a progressivement été remplacée par un découpage plus fin où la séparation réseaux/machine peut se trouver à l'interieur d'une partie, dépendant de ce que l’on appelle le « masque de sous-réseau », mais cette notion ne sera pas abordée ici.</p>
 						<h4>À faire vous-même 4</h4>
 						<p>Un réseau de classe C peut contenir au maximum combien de machines ? et un réseau de classe B ? (rappel : b, c et d sont compris entre 0 et 255).</p>
+	
 						<hr>
 						<p>
 							Chose très importante à toujours avoir à l'esprit, même une simple photo n'est pas "transportée" en une fois d'un ordinateur A vers un ordinateur B. Les données correspondantes à la photo sont "découpées" en plusieurs morceaux, chaque morceau étant transporté par l'intermédiaire d'un paquet IP.
