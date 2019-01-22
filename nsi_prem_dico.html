@@ -31,7 +31,7 @@
     <div class="container act">
 			<p>Comme les listes, les dictionnaires permettent de "stocker" des données. Chaque élément d'un dictionnaire est composé de 2 parties, on parle de pairs "clé/valeur". Voici un exemple de dictionnaire :</p>
 			<pre><code class='python'>
-mon_dico = {"nom":"Durand", "prenom":"Christophe", "date de naissance":"29/02/1981"}
+mon_dico = {"nom": "Durand", "prenom": "Christophe", "date de naissance": "29/02/1981"}
 			</code></pre>
 			<p>Comme vous pouvez le constater, nous utilisons des accolades {} pour définir le début et la fin du dictionnaire (alors que nous utilisons des crochets [] pour les listes et les parenthèses pour les tuples).
 				Dans le dictionnaire ci-dessus, "nom", "prenom" et "date de naissance" sont des clés et "Durand", "Christophe" et "29/02/1981" sont des valeurs.
@@ -47,7 +47,7 @@ mon_dico["date de naissance"] = "29/02/1981"
 				<h4>À faire vous-même 1</h4>
 				<p><p>Analysez puis testez le code suivant :</p></p>
 				<pre><code class='python'>
-mon_dico = {"nom":"Durand", "prenom":"Christophe", "date de naissance":"29/02/1981"}
+mon_dico = {"nom": "Durand", "prenom": "Christophe", "date de naissance": "29/02/1981"}
 print(mon_dico)
 				</code></pre>
 				<hr>
@@ -55,7 +55,7 @@ print(mon_dico)
 				<h4>À faire vous-même 2</h4>
 				<p>Soit le programme suivant :</p>
 				<pre><code class='python'>
-mon_dico = {"nom":"Durand", "prenom":"Christophe", "date de naissance":"29/02/1981"}
+mon_dico = {"nom": "Durand", "prenom": "Christophe", "date de naissance": "29/02/1981"}
 print(f'Bonjour je suis {monDico["prenom"]} {monDico["nom"]}, je suis né le {monDico["date de naissance"]}')
 				</code></pre>
 				<p>Quel est le résultat attendu après l'exécution de ce programme ? Vérifiez votre réponse.</p>
@@ -64,9 +64,9 @@ print(f'Bonjour je suis {monDico["prenom"]} {monDico["nom"]}, je suis né le {mo
 				<h4>À faire vous-même 3</h4>
 				<p>Soit le programme suivant :</p>
 				<pre><code class='python'>
-mon_dico = {"nom":"Durand", "prenom":"Christophe", "date de naissance":"29/02/1981"}
+mon_dico = {"nom": "Durand", "prenom": "Christophe", "date de naissance": "29/02/1981"}
 print(f'Bonjour je suis {monDico["prenom"]} {monDico["nom"]}, je suis né le {monDico["date de naissance"]}')
-mon_dico['lieu naissance' ] ="Bonneville"
+mon_dico['lieu naissance'] = "Bonneville"
 print (f'à {monDico["lieu naissance"]}')
 				</code></pre>
 				<p>Quel est le résultat attendu après l'exécution de ce programme ? Vérifiez votre réponse.</p>
@@ -75,7 +75,7 @@ print (f'à {monDico["lieu naissance"]}')
 				<h4>À faire vous-même 4</h4>
 				<p>Soit le programme suivant :</p>
 				<pre><code class='python'>
-mes_fruits = {"poire":3, "pomme":4, "orange":2}
+mes_fruits = {"poire": 3, "pomme": 4, "orange": 2}
 print("avant le del")
 print(mes_fruits)
 del mes_fruits["pomme"]
@@ -88,7 +88,7 @@ print(mes_fruits)
 				<h4>À faire vous-même 5</h4>
 				<p>Soit le programme suivant :</p>
 				<pre><code class='python'>
-mes_fruits = {"poire":3, "pomme":4, "orange":2}
+mes_fruits = {"poire": 3, "pomme": 4, "orange": 2}
 print(mes_fruits)
 print ("Nous avons vendu une pomme")
 mes_fruits["pomme"] = mesFruits["pomme"] - 1
@@ -101,7 +101,7 @@ print(mes_fruits)
 					<h4>À faire vous-même 6</h4>
 					<p>Tester le programme suivant :</p>
 					<pre><code class='python'>
-mes_fruits = {"poire":3, "pomme":4, "orange":2}
+mes_fruits = {"poire": 3, "pomme": 4, "orange": 2}
 for fruit in mes_fruits.keys():
 	print (fruit)
 					</code></pre>
@@ -110,7 +110,7 @@ for fruit in mes_fruits.keys():
 					<h4>À faire vous-même 7</h4>
 					<p>Tester le programme suivant :</p>
 					<pre><code class='python'>
-mes_fruits = {"poire":3, "pomme":4, "orange":2}
+mes_fruits = {"poire": 3, "pomme": 4, "orange": 2}
 	for qte in mes_fruits.values():
 		print(qte)
 					</code></pre>
@@ -119,9 +119,9 @@ mes_fruits = {"poire":3, "pomme":4, "orange":2}
 					<h4>À faire vous-même 8</h4>
 					<p>Tester le programme suivant :</p>
 					<pre><code class='python'>
-mes_fruits = {"poire":3, "pomme":4, "orange":2}
+mes_fruits = {"poire": 3, "pomme": 4, "orange": 2}
 print ("Stock de fruits :")
-for fruit,qte in mes_fruits.items():
+for fruit, qte in mes_fruits.items():
 	print (f"{fruit} : {qte}")
 					</code></pre>
 					<p>
